@@ -1,0 +1,158 @@
+generated: '2026-09-07'
+method: probed
+source: direct HTTP probes of every host this record knows (2026-09-07)
+note: >-
+  No document was found. Every /.well-known/ path on the company's apex host returned a real
+  WordPress 404 page (HTTP 404, an HTML theme 404 — not a soft-200 shell); the www host 301s to the
+  apex for every path. Advance Composite is a Japanese metal-matrix-composite manufacturer with no
+  developer program, no API baseURL and no OpenAPI servers[] host, so this record knows only the
+  corporate WordPress site. NO WellKnown and NO SecurityTxt pointer is emitted from this file —
+  nothing returned a document, and the pointer would assert a surface the provider does not serve.
+hosts:
+- host: advance-composite.co.jp
+  note: Registrable domain and the only live web host this company operates (WordPress 7.0.4).
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: www.advance-composite.co.jp
+  note: Redirects to the apex host for every path (301); no separate origin.
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 301
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+    file: null
+  - path: /.well-known/api-catalog
+    status: 301
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 301
+    file: null
+contract_discovery:
+  note: >-
+    STEP 0b run in full on 2026-09-07. The record carries no apis[], so there is no baseURL host and
+    no OpenAPI servers[] host; the corporate WordPress site is also the docs host. The complete page
+    inventory was read from the published sitemap (https://advance-composite.co.jp/wp-sitemap.xml,
+    HTTP 200, 37 pages across ja/en) and contains no developer, API, partner, pricing or terms page —
+    only company profile, materials/process pages, a news list, a contact form and a privacy policy.
+  probes:
+  - path: /openapi.json
+    hosts: [advance-composite.co.jp]
+    status: 404
+    result: WordPress 404 page, not a spec
+  - path: /openapi.yaml
+    hosts: [advance-composite.co.jp]
+    status: 404
+    result: WordPress 404 page, not a spec
+  - path: /swagger.json
+    hosts: [advance-composite.co.jp]
+    status: 404
+    result: WordPress 404 page, not a spec
+  - path: /api-docs
+    hosts: [advance-composite.co.jp]
+    status: 404
+    result: WordPress 404 page
+  - path: /docs
+    hosts: [advance-composite.co.jp]
+    status: 404
+    result: WordPress 404 page
+  - path: /redoc
+    hosts: [advance-composite.co.jp]
+    status: 404
+    result: WordPress 404 page
+  - path: /llms.txt
+    hosts: [advance-composite.co.jp]
+    status: 404
+    result: WordPress 404 page, not an llms.txt
+  - path: /graphql
+    hosts: [advance-composite.co.jp]
+    status: 404
+    result: no GraphQL surface; introspection not attempted
+  - path: /developers
+    hosts: [advance-composite.co.jp]
+    status: 404
+    result: WordPress 404 page
+  - path: /developer
+    hosts: [advance-composite.co.jp]
+    status: 404
+    result: WordPress 404 page
+  - path: /api
+    hosts: [advance-composite.co.jp]
+    status: 404
+    result: WordPress 404 page
+  - path: /partners
+    hosts: [advance-composite.co.jp]
+    status: 404
+    result: WordPress 404 page
+  - path: /pricing
+    hosts: [advance-composite.co.jp]
+    status: 404
+    result: WordPress 404 page
+  - path: /status
+    hosts: [advance-composite.co.jp]
+    status: 404
+    result: WordPress 404 page
+  - path: /wp-json/
+    hosts: [advance-composite.co.jp]
+    status: 403
+    result: >-
+      The WordPress core REST API route index is blocked at the origin (403 Forbidden, an
+      EUC-JP Apache error page), as are /wp-json/wp/v2/ and /en/wp-json/. Even if it were open
+      this is generic WordPress CMS plumbing shipped by the platform, not an API this company
+      designed, documented or offers to consumers, so it is recorded as a probe result and is
+      NOT registered as a provider API.
+  graphql: >-
+    not probed by introspection — /graphql 404s and no GraphQL surface is named in any of the
+    company's public material
+  mcp: not probed — no MCP endpoint is named anywhere in the company's public material
+  a2a: >-
+    /.well-known/agent-card.json and /.well-known/agent.json both 404 on the only live host;
+    no card exists, so no a2a/ artifact was written
+  ogc: >-
+    not probed — no evidence points at an OGC surface; no WMS/WFS/WCS/WMTS/CSW or "OGC API"
+    language appears in any material about this company, and blind path patterns are out of bounds
+  wsdl: >-
+    not probed for ?wsdl — there is no baseURL host to probe and no SOAP/enterprise integration
+    language anywhere in the company's material
+  subdomains:
+  - host: api.advance-composite.co.jp
+    result: >-
+      resolves only through a DNS wildcard (183.90.228.33, identical to a random control name);
+      no TLS/HTTP service answers — curl exit status 000
+  - host: developer.advance-composite.co.jp
+    result: wildcard DNS, no service (curl exit status 000)
+  - host: docs.advance-composite.co.jp
+    result: wildcard DNS, no service (curl exit status 000)
+  registries:
+  - registry: npm
+    query: advance-composite / advancecomposite
+    results: 0
+  - registry: github
+    query: advance-composite organisation
+    results: no organisation found; no repository is linked from the company site
